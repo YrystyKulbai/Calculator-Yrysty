@@ -1,15 +1,30 @@
 plugins {
-    id 'groovy'
     id 'java'
+    id 'application'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+javadoc.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
+
+mainClassName = 'calculator.CalculatorFrame'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.8'
+}
+
+jar {
+    from {
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+
+    exclude('META-INF/*.txt')
 }
