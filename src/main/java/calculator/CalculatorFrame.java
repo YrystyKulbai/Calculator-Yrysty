@@ -7,6 +7,7 @@ public class CalculatorFrame extends JFrame {
     private static final String TITLE = "Calculator";
     private final JLabel memoryIndicator = new JLabel();
     private final JTextField resultField = new JTextField(24);
+    private OperationPanel operationPanel = new OperationPanel(this);
 
     public CalculatorFrame() {
         setTitle(TITLE);
@@ -45,6 +46,13 @@ public class CalculatorFrame extends JFrame {
         resultPos.gridwidth = 4;
         resultPos.gridheight = 1;
         this.add(resultField, resultPos);
+
+        GridBagConstraints operationPos = new GridBagConstraints();
+        operationPos.gridx = 0;
+        operationPos.gridy = 1;
+        operationPos.gridheight = 6;
+        operationPos.gridwidth = 5;
+        this.add(operationPanel, operationPos);
 
         this.pack();
     }
