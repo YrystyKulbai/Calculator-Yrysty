@@ -56,4 +56,11 @@ public class CalculatorFrame extends JFrame {
 
         this.pack();
     }
+    public void updateEquation(String eq) {
+        resultField.setText(eq);
+    }
+
+    public void setMemoryStatus(boolean status) {
+        memoryIndicator.setVisible(status);
+    }
 }
