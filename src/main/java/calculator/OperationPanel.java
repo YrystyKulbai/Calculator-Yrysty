@@ -18,36 +18,36 @@ public class OperationPanel extends JPanel implements ActionListener {
     private boolean operIsEnd = false;
     private boolean isFirstDigit = true;
 
-    private CalculatorFrame frame;
+    private final CalculatorFrame frame;
 
-    private JButton[] numButtons = new JButton[10];
-    private JButton dotButton = new JButton();
+    private final JButton[] numButtons = new JButton[10];
+    private final JButton dotButton = new JButton();
 
     // Memory Operation
-    private JButton mcButton = new JButton();
-    private JButton mrButton = new JButton();
-    private JButton mPlusButton = new JButton();
-    private JButton mMinusButton = new JButton();
-    private JButton msButton = new JButton();
+    private final JButton mcButton = new JButton();
+    private final JButton mrButton = new JButton();
+    private final JButton mPlusButton = new JButton();
+    private final JButton mMinusButton = new JButton();
+    private final JButton msButton = new JButton();
 
     // Binary Operation
-    private JButton plusButton = new JButton();
-    private JButton minusButton = new JButton();
-    private JButton divideButton = new JButton();
-    private JButton multiplyButton = new JButton();
-    private JButton expButton = new JButton();
+    private final JButton plusButton = new JButton();
+    private final JButton minusButton = new JButton();
+    private final JButton divideButton = new JButton();
+    private final JButton multiplyButton = new JButton();
+    private final JButton expButton = new JButton();
 
     // Unary Operation
-    private JButton sqrtButton = new JButton();
-    private JButton modButton = new JButton();
-    private JButton logButton = new JButton();
-    private JButton factorialButton = new JButton();
-    private JButton invertSignButton = new JButton();
+    private final JButton sqrtButton = new JButton();
+    private final JButton modButton = new JButton();
+    private final JButton logButton = new JButton();
+    private final JButton factorialButton = new JButton();
+    private final JButton invertSignButton = new JButton();
 
-    private JButton equalButton = new JButton();
-    private JButton ceButton = new JButton();
-    private JButton clearButton = new JButton();
-    private JButton backspaceButton = new JButton();
+    private final JButton equalButton = new JButton();
+    private final JButton ceButton = new JButton();
+    private final JButton clearButton = new JButton();
+    private final JButton backspaceButton = new JButton();
 
     public OperationPanel(CalculatorFrame f) {
         frame = f;
@@ -57,53 +57,64 @@ public class OperationPanel extends JPanel implements ActionListener {
     }
 
     private void createUIComponents() {
-        setupNumButtons();
-        setupBinaryOpButtons();
-        setupUnaryOpButtons();
+        setupNumButtons(new Color(247, 247, 42));
+        setupBinaryOpButtons(new Color(240, 34, 54));
+        setupUnaryOpButtons(new Color(240, 34, 54));
         setupMemoryButtons();
         setupFunctionButtons();
     }
 
-    private void setupNumButtons() {
+    private void setupNumButtons(Color bg) {
         for (Integer i = 0; i < 10; i++) {
             numButtons[i] = new JButton();
             numButtons[i].setText(i.toString());
             numButtons[i].addActionListener(this);
+            numButtons[i].setBackground(bg);
         }
     }
 
-    private void setupBinaryOpButtons() {
+    private void setupBinaryOpButtons(Color bg) {
         plusButton.setText("+");
         plusButton.addActionListener(this);
+        plusButton.setBackground(bg);
 
         minusButton.setText("-");
         minusButton.addActionListener(this);
+        minusButton.setBackground(bg);
 
         divideButton.setText("/");
         divideButton.addActionListener(this);
+        divideButton.setBackground(bg);
 
         multiplyButton.setText("*");
         multiplyButton.addActionListener(this);
+        multiplyButton.setBackground(bg);
 
         modButton.setText("%");
         modButton.addActionListener(this);
+        modButton.setBackground(bg);
 
         expButton.setText("exp");
         expButton.addActionListener(this);
+        expButton.setBackground(bg);
     }
 
-    private void setupUnaryOpButtons() {
+    private void setupUnaryOpButtons(Color bg) {
         sqrtButton.setText("√");
         sqrtButton.addActionListener(this);
+        sqrtButton.setBackground(bg);
 
         logButton.setText("log");
         logButton.addActionListener(this);
+        logButton.setBackground(bg);
 
         factorialButton.setText("!");
         factorialButton.addActionListener(this);
+        factorialButton.setBackground(bg);
 
         invertSignButton.setText("+/-");
         invertSignButton.addActionListener(this);
+        invertSignButton.setBackground(bg);
     }
 
     private void setupMemoryButtons() {
