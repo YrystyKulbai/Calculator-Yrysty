@@ -58,8 +58,8 @@ public class OperationPanel extends JPanel implements ActionListener {
 
     private void createUIComponents() {
         setupNumButtons(new Color(247, 247, 42));
-        setupBinaryOpButtons(new Color(240, 34, 54));
-        setupUnaryOpButtons(new Color(240, 34, 54));
+        setupBinaryOpButtons(new Color(3, 116, 14));
+        setupUnaryOpButtons(new Color(3, 116, 14));
         setupMemoryButtons(new Color(107, 103, 219));
         setupFunctionButtons(new Color(107, 103, 219));
     }
