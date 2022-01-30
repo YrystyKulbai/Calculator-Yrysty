@@ -60,8 +60,8 @@ public class OperationPanel extends JPanel implements ActionListener {
         setupNumButtons(new Color(247, 247, 42));
         setupBinaryOpButtons(new Color(240, 34, 54));
         setupUnaryOpButtons(new Color(240, 34, 54));
-        setupMemoryButtons();
-        setupFunctionButtons();
+        setupMemoryButtons(new Color(107, 103, 219));
+        setupFunctionButtons(new Color(107, 103, 219));
     }
 
     private void setupNumButtons(Color bg) {
@@ -117,38 +117,48 @@ public class OperationPanel extends JPanel implements ActionListener {
         invertSignButton.setBackground(bg);
     }
 
-    private void setupMemoryButtons() {
+    private void setupMemoryButtons(Color bg) {
         mcButton.setText("MC");
         mcButton.addActionListener(this);
+        mcButton.setBackground(bg);
 
         msButton.setText("MS");
         msButton.addActionListener(this);
+        msButton.setBackground(bg);
 
         mrButton.setText("MR");
         mrButton.addActionListener(this);
+        mrButton.setBackground(bg);
 
         mPlusButton.setText("M+");
         mPlusButton.addActionListener(this);
+        mPlusButton.setBackground(bg);
 
         mMinusButton.setText("M-");
         mMinusButton.addActionListener(this);
+        mMinusButton.setBackground(bg);
     }
 
-    private void setupFunctionButtons() {
+    private void setupFunctionButtons(Color bg) {
         ceButton.setText("CE");
         ceButton.addActionListener(this);
+        ceButton.setBackground(bg);
 
         clearButton.setText("C");
         clearButton.addActionListener(this);
+        clearButton.setBackground(bg);
 
         backspaceButton.setText("←");
         backspaceButton.addActionListener(this);
+        backspaceButton.setBackground(bg);
 
         dotButton.setText(".");
         dotButton.addActionListener(this);
+        dotButton.setBackground(bg);
 
         equalButton.setText("=");
         equalButton.addActionListener(this);
+        equalButton.setBackground(bg);
     }
 
     private void addComponents() {

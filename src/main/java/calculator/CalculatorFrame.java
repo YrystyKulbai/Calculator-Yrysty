@@ -7,7 +7,7 @@ public class CalculatorFrame extends JFrame {
     private static final String TITLE = "Calculator";
     private final JLabel memoryIndicator = new JLabel();
     private final JTextField resultField = new JTextField(24);
-    private OperationPanel operationPanel = new OperationPanel(this);
+    private final OperationPanel operationPanel = new OperationPanel(this);
 
     public CalculatorFrame() {
         setTitle(TITLE);
